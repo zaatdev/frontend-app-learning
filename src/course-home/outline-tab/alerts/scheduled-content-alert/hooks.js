@@ -25,6 +25,7 @@ const useScheduledContentAlert = (courseId) => {
   };
   useAlert(hasScheduledContent && isEnrolled, {
     code: 'ScheduledContentAlert',
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     payload: useMemo(() => payload, Object.values(payload).sort()),
     topic: 'outline-course-alerts',
   });

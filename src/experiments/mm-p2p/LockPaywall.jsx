@@ -5,7 +5,7 @@ import PageLoading from '../../generic/PageLoading';
 
 const LockPaywallContent = React.lazy(() => import('./LockPaywallContent'));
 
-const LockPaywall = ({ options }) => {
+function LockPaywall({ options }) {
   if (!(options.meta.gradedLock || options.meta.verifiedLock)) {
     return null;
   }
@@ -16,7 +16,7 @@ const LockPaywall = ({ options }) => {
       <LockPaywallContent options={options} />
     </Suspense>
   );
-};
+}
 LockPaywall.propTypes = {
   options: PropTypes.shape({
     access: PropTypes.shape({

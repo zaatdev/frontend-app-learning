@@ -5,10 +5,10 @@ import classNames from 'classnames';
 
 import Sidecard from './Sidecard';
 
-const Flyover = ({
+function Flyover({
   isStatic,
   options,
-}) => {
+}) {
   const handleHideFlyoverKeyPress = (event) => {
     if (event.key === 'Enter') {
       options.flyover.toggle();
@@ -49,7 +49,7 @@ const Flyover = ({
       <Sidecard options={options} />
     </div>
   );
-};
+}
 Flyover.propTypes = {
   isStatic: PropTypes.bool,
   options: PropTypes.shape({

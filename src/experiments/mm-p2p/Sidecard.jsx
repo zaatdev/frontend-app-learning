@@ -5,13 +5,15 @@ import PageLoading from '../../generic/PageLoading';
 
 const SidecardContent = React.lazy(() => import('./SidecardContent'));
 
-const Sidecard = ({ options }) => (
-  <Suspense
-    fallback={(<PageLoading srMessage="Loading upgrade messaging..." />)}
-  >
-    <SidecardContent options={options} />
-  </Suspense>
-);
+function Sidecard({ options }) {
+  return (
+    <Suspense
+      fallback={(<PageLoading srMessage="Loading upgrade messaging..." />)}
+    >
+      <SidecardContent options={options} />
+    </Suspense>
+  );
+}
 
 Sidecard.propTypes = {
   options: PropTypes.shape({

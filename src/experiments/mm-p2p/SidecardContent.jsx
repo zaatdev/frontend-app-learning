@@ -3,62 +3,70 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const AlertBanner = ({ color, children }) => (
-  <div
-    className={classNames(
-      'mmp2p-sidecard-alert alert',
-      { danger: color === 'red' },
-    )}
-  >
-    {children}
-  </div>
-);
+function AlertBanner({ color, children }) {
+  return (
+    <div
+      className={classNames(
+        'mmp2p-sidecard-alert alert',
+        { danger: color === 'red' },
+      )}
+    >
+      {children}
+    </div>
+  );
+}
 AlertBanner.propTypes = {
   color: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-const localizeTime = (date) => date.toLocaleTimeString('en-US',
+const localizeTime = (date) => date.toLocaleTimeString(
+  'en-US',
   {
     hour: '2-digit', minute: 'numeric', hour12: true, timeZoneName: 'short',
-  });
-const localizeDate = (date) => date.toLocaleDateString('en-US',
-  { month: 'long', day: 'numeric' });
-
-const BulletList = ({ children }) => (
-  <div style={{ marginBottom: '3px' }} className="mmp2p-bullet-list-item">
-    <div className="icon-container">
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        data-prefix="far"
-        data-icon="check-circle"
-        className="svg-inline--fa fa-check-circle fa-w-16"
-        role="img"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-      >
-        <path
-          fill="currentColor"
-          d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
-        />
-      </svg>
-    </div>
-    <div className="bullet-item-content">
-      {children}
-    </div>
-  </div>
+  },
 );
+const localizeDate = (date) => date.toLocaleDateString(
+  'en-US',
+  { month: 'long', day: 'numeric' },
+);
+
+function BulletList({ children }) {
+  return (
+    <div style={{ marginBottom: '3px' }} className="mmp2p-bullet-list-item">
+      <div className="icon-container">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="far"
+          data-icon="check-circle"
+          className="svg-inline--fa fa-check-circle fa-w-16"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+          />
+        </svg>
+      </div>
+      <div className="bullet-item-content">
+        {children}
+      </div>
+    </div>
+  );
+}
 BulletList.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const Sidecard = ({
+function Sidecard({
   options: {
     state: { upgradeDeadline },
     access: { accessExpirationDate, price, upgradeUrl },
   },
-}) => {
+}) {
   const dates = {
     upgradeDeadline: new Date(upgradeDeadline),
     accessExpirationDate: new Date(accessExpirationDate),
@@ -132,7 +140,7 @@ const Sidecard = ({
       </div>
     </div>
   );
-};
+}
 
 Sidecard.propTypes = {
   options: PropTypes.shape({

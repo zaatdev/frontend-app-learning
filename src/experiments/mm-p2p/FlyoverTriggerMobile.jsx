@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import FlyoverTriggerIcon from './FlyoverTriggerIcon';
 import { isMobile } from './utils';
 
-const FlyoverTriggerMobile = ({ options }) => {
+function FlyoverTriggerMobile({ options }) {
   const { isVisible, toggle } = options.flyover;
   if (!options.access.isAudit || options.state.afterUpgradeDeadline) {
     return null;
@@ -23,7 +23,7 @@ const FlyoverTriggerMobile = ({ options }) => {
       <FlyoverTriggerIcon />
     </div>
   ));
-};
+}
 
 FlyoverTriggerMobile.propTypes = {
   options: PropTypes.shape({

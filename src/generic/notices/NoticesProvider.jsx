@@ -8,7 +8,7 @@ import { getNotices } from './api';
  * course home and onto a full-screen notice page. If the plugin is not
  * installed, or there are no notices, we just passthrough this component.
  */
-const NoticesProvider = ({ children }) => {
+function NoticesProvider({ children }) {
   const [isRedirected, setIsRedirected] = useState();
   useEffect(async () => {
     if (getConfig().ENABLE_NOTICES) {
@@ -26,7 +26,7 @@ const NoticesProvider = ({ children }) => {
       {isRedirected === true ? null : children}
     </div>
   );
-};
+}
 
 NoticesProvider.propTypes = {
   children: PropTypes.node.isRequired,
