@@ -12,5 +12,6 @@ module.exports = createConfig('eslint', {
   rules: {
     'no-restricted-exports': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'func-names': 'off',
   },
 });
