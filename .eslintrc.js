@@ -7,8 +7,10 @@ module.exports = createConfig('eslint', {
     rules: {
       'import/named': 'off',
       'import/no-extraneous-dependencies': 'off',
-      'no-restricted-exports': 'off',
-      'react-hooks/exhaustive-deps': 'off',
     },
   }],
+  rules: {
+    'no-restricted-exports': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+  },
 });

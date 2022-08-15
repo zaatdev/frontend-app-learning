@@ -29,11 +29,11 @@ function ShiftDatesAlert({ fetch, intl, model }) {
     missedGatedContent,
   } = datesBannerInfo;
 
+  const dispatch = useDispatch();
+
   if (!missedDeadlines || missedGatedContent || hasEnded) {
     return null;
   }
-
-  const dispatch = useDispatch();
 
   return (
     <Alert variant="warning">

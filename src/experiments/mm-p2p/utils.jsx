@@ -10,6 +10,7 @@ export const isMobile = () => {
   );
 };
 
+// eslint-disable-next-line react-hooks/rules-of-hooks
 export const getUser = () => useContext(AppContext).authenticatedUser;
 
 const staticReturnOptions = [

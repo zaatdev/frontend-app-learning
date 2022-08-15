@@ -36,7 +36,7 @@ function WeeklyLearningGoalCard({
   const [isGetReminderSelected, setGetReminderSelected] = useState(subscribedToReminders);
   const location = useLocation();
 
-  function handleSelect(days, triggeredFromEmail = false) {
+  const handleSelect = (days, triggeredFromEmail = false) => {
     // Set the subscription button if this is the first time selecting a goal
     const selectReminders = daysPerWeekGoal === null ? true : isGetReminderSelected;
     setGetReminderSelected(selectReminders);
@@ -52,7 +52,7 @@ function WeeklyLearningGoalCard({
         triggeredFromEmail,
       });
     }
-  }
+  };
 
   function handleSubscribeToReminders(event) {
     const isGetReminderChecked = event.target.checked;

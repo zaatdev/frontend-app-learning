@@ -54,9 +54,6 @@ function StreakModal({
   courseId, metadataModel, streakLengthToCelebrate, intl, isStreakCelebrationOpen,
   closeStreakCelebration, streakDiscountCouponEnabled, verifiedMode, ...rest
 }) {
-  if (!isStreakCelebrationOpen) {
-    return null;
-  }
   const { org, celebrations, username } = useModel('courseHomeMeta', courseId);
   const factoid = getRandomFactoid(intl, streakLengthToCelebrate);
   // eslint-disable-next-line no-unused-vars
@@ -108,6 +105,11 @@ function StreakModal({
     }
   }, [streakDiscountCouponEnabled, username, verifiedMode]);
 
+  if (!isStreakCelebrationOpen) {
+    return null;
+  }
+
+  // eslint-disable-next-line react/no-unstable-nested-components
   function CloseText() {
     return (
       <span>

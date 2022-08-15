@@ -42,6 +42,7 @@ export default function SidebarProvider({
   };
 
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <SidebarContext.Provider value={{
       toggleSidebar,
       onNotificationSeen,

@@ -8,6 +8,7 @@ const CourseStartMasqueradeBanner = React.lazy(() => import('./CourseStartMasque
 function isStartDateInFuture(courseId) {
   const {
     start,
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   } = useModel('courseHomeMeta', courseId);
 
   const today = new Date();

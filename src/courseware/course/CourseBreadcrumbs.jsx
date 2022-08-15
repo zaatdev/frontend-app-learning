@@ -97,6 +97,7 @@ export default function CourseBreadcrumbs({
   const allSequencesInSections = Object.fromEntries(useModels('sections', course.sectionIds).map(section => [section.id, {
     default: section.id === sectionId,
     title: section.title,
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     sequences: useModels('sequences', section.sequenceIds),
   }]));
 

@@ -81,6 +81,7 @@ export default function UserMessagesProvider({ children }) {
     flashMessages.forEach(flashMessage => add(flashMessage));
   }, []);
 
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     add,
     addFlash,

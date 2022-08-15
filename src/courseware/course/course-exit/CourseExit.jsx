@@ -44,11 +44,11 @@ function CourseExit({ intl }) {
   // Audit users cannot fully complete a course, so we will
   // unsubscribe them from goal reminders once they reach the course exit page
   // to avoid spamming them with goal reminder emails
-  if (courseGoals && enrollmentMode === 'audit' && !isMasquerading) {
-    useEffect(() => {
+  useEffect(() => {
+    if (courseGoals && enrollmentMode === 'audit' && !isMasquerading) {
       unsubscribeFromGoalReminders(courseId);
-    }, []);
-  }
+    }
+  }, []);
 
   let body = null;
   if (mode === COURSE_EXIT_MODES.nonPassing) {

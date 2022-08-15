@@ -11,6 +11,7 @@ import Course from './Course';
 jest.mock('@edx/frontend-platform/analytics');
 
 const recordFirstSectionCelebration = jest.fn();
+// eslint-disable-next-line no-import-assign
 celebrationUtils.recordFirstSectionCelebration = recordFirstSectionCelebration;
 
 describe('Course', () => {

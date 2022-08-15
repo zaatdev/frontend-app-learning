@@ -23,10 +23,6 @@ function ProductTours({
   isStreakCelebrationOpen,
   org,
 }) {
-  if (isStreakCelebrationOpen) {
-    return null;
-  }
-
   const {
     proctoringPanelStatus,
   } = useSelector(state => state.courseHome);
@@ -80,6 +76,10 @@ function ProductTours({
       setIsNewUserCourseHomeTourEnabled(true);
     }
   }, [showNewUserCourseHomeTour]);
+
+  if (isStreakCelebrationOpen) {
+    return null;
+  }
 
   // The <ProductTour /> component cannot handle rendering multiple enabled tours at once.
   // I.e. when adding new tours, beware that if multiple tours are enabled,

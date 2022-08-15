@@ -26,6 +26,8 @@ function SequenceContent({
     global.scrollTo(0, 0);
   }, [sequenceId, unitId]);
 
+  const unit = useModel('units', unitId);
+
   if (gated) {
     return (
       <Suspense
@@ -44,8 +46,6 @@ function SequenceContent({
       </Suspense>
     );
   }
-
-  const unit = useModel('units', unitId);
   if (!unitId || !unit) {
     return (
       <div>

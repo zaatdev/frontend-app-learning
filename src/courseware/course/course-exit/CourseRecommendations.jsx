@@ -106,8 +106,8 @@ function CourseCard({
           <Card.ImageCap src={image.src} />
           <Card.Header title={truncate(title, 70, { reserveLastWord: -1 })} subtitle={subtitle} size="sm" />
           {/* Section is needed for internal vertical spacing to work out. If you can remove, be my guest */}
-          <Card.Section> <></> </Card.Section>
-          <Card.Footer textElement={intl.formatMessage(messages.recommendationsCourseFooter)}><></></Card.Footer>
+          <Card.Section />
+          <Card.Footer textElement={intl.formatMessage(messages.recommendationsCourseFooter)} />
         </Card>
       </Hyperlink>
     </div>

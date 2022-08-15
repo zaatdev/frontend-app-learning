@@ -296,10 +296,6 @@ function UpgradeNotification({
   const accessExpirationDate = accessExpiration ? new Date(accessExpiration.expirationDate) : null;
   const pastExpirationDeadline = accessExpiration ? new Date(dateNow) > accessExpirationDate : false;
 
-  if (!verifiedMode) {
-    return null;
-  }
-
   const eventProperties = {
     org_key: org,
     courserun_key: courseId,
@@ -317,6 +313,10 @@ function UpgradeNotification({
     sendTrackingLogEvent('edx.bi.course.upgrade.sidebarupsell.displayed', eventProperties);
     sendTrackEvent('Promotion Viewed', promotionEventProperties);
   }, []);
+
+  if (!verifiedMode) {
+    return null;
+  }
 
   const logClick = () => {
     sendTrackingLogEvent('edx.bi.course.upgrade.sidebarupsell.clicked', eventProperties);
