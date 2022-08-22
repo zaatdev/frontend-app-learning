@@ -40,18 +40,21 @@ function LaunchCourseHomeTourButton({ intl, srOnly }) {
   };
 
   return (
-    toursEnabled && (
-      <Button variant="link" size="inline" className={`p-0 ${srOnly && 'sr-only sr-only-focusable'}`} onClick={handleClick}>
-        {!srOnly && (
-          <Icon
-            src={Compass}
-            className="mr-2"
-            style={{ height: '18px', width: '18px' }}
-          />
-        )}
-        {intl.formatMessage(messages.launchTour)}
-      </Button>
-    )
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {toursEnabled && (
+        <Button variant="link" size="inline" className={`p-0 ${srOnly && 'sr-only sr-only-focusable'}`} onClick={handleClick}>
+          {!srOnly && (
+            <Icon
+              src={Compass}
+              className="mr-2"
+              style={{ height: '18px', width: '18px' }}
+            />
+          )}
+          {intl.formatMessage(messages.launchTour)}
+        </Button>
+      )}
+    </>
   );
 }
 

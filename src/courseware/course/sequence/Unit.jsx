@@ -190,20 +190,23 @@ function Unit({
       {modalOptions.open && (
         <Modal
           body={(
-            modalOptions.body
-              ? <div className="unit-modal">{ modalOptions.body }</div>
-              : (
-                <iframe
-                  title={modalOptions.title}
-                  allow={IFRAME_FEATURE_POLICY}
-                  frameBorder="0"
-                  src={modalOptions.url}
-                  style={{
-                    width: '100%',
-                    height: '100vh',
-                  }}
-                />
-              )
+            // eslint-disable-next-line react/jsx-no-useless-fragment
+            <>
+              {modalOptions.body
+                ? <div className="unit-modal">{ modalOptions.body }</div>
+                : (
+                  <iframe
+                    title={modalOptions.title}
+                    allow={IFRAME_FEATURE_POLICY}
+                    frameBorder="0"
+                    src={modalOptions.url}
+                    style={{
+                      width: '100%',
+                      height: '100vh',
+                    }}
+                  />
+                )}
+            </>
           )}
           onClose={() => { setModalOptions({ open: false }); }}
           open

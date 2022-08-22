@@ -154,45 +154,48 @@ function ProctoringInfoPanel({ intl }) {
   }
 
   return (
-    showInfoPanel && (
-      <section className={`mb-4 p-3 outline-sidebar-proctoring-panel ${getBorderClass()}`}>
-        <h2 className="h4" id="outline-sidebar-upgrade-header">{intl.formatMessage(messages.proctoringInfoPanel)}</h2>
-        <div>
-          {readableStatus && (
-            <>
-              <p className="h6">
-                {intl.formatMessage(messages.proctoringCurrentStatus)} {intl.formatMessage(messages[`${readableStatus}ProctoringStatus`])}
-              </p>
-              <p>
-                {intl.formatMessage(messages[`${readableStatus}ProctoringMessage`])}
-              </p>
-              <p>
-                {readableStatus === readableStatuses.otherCourseApproved && intl.formatMessage(messages[`${readableStatus}ProctoringDetail`])}
-              </p>
-            </>
-          )}
-          {![readableStatuses.verified, readableStatuses.otherCourseApproved].includes(readableStatus) && (
-            <>
-              <p>
-                {isNotYetSubmitted(status) && (
-                  intl.formatMessage(messages.proctoringPanelGeneralInfo)
-                )}
-                {!isNotYetSubmitted(status) && (
-                  intl.formatMessage(messages.proctoringPanelGeneralInfoSubmitted)
-                )}
-              </p>
-              <p>{intl.formatMessage(messages.proctoringPanelGeneralTime)}</p>
-            </>
-          )}
-          {isNotYetSubmitted(status) && (
-            onboardingExamButton
-          )}
-          <Button variant="outline-primary" block href="https://support.edx.org/hc/en-us/sections/115004169247-Taking-Timed-and-Proctored-Exams">
-            {intl.formatMessage(messages.proctoringReviewRequirementsButton)}
-          </Button>
-        </div>
-      </section>
-    )
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      { showInfoPanel && (
+        <section className={`mb-4 p-3 outline-sidebar-proctoring-panel ${getBorderClass()}`}>
+          <h2 className="h4" id="outline-sidebar-upgrade-header">{intl.formatMessage(messages.proctoringInfoPanel)}</h2>
+          <div>
+            {readableStatus && (
+              <>
+                <p className="h6">
+                  {intl.formatMessage(messages.proctoringCurrentStatus)} {intl.formatMessage(messages[`${readableStatus}ProctoringStatus`])}
+                </p>
+                <p>
+                  {intl.formatMessage(messages[`${readableStatus}ProctoringMessage`])}
+                </p>
+                <p>
+                  {readableStatus === readableStatuses.otherCourseApproved && intl.formatMessage(messages[`${readableStatus}ProctoringDetail`])}
+                </p>
+              </>
+            )}
+            {![readableStatuses.verified, readableStatuses.otherCourseApproved].includes(readableStatus) && (
+              <>
+                <p>
+                  {isNotYetSubmitted(status) && (
+                    intl.formatMessage(messages.proctoringPanelGeneralInfo)
+                  )}
+                  {!isNotYetSubmitted(status) && (
+                    intl.formatMessage(messages.proctoringPanelGeneralInfoSubmitted)
+                  )}
+                </p>
+                <p>{intl.formatMessage(messages.proctoringPanelGeneralTime)}</p>
+              </>
+            )}
+            {isNotYetSubmitted(status) && (
+              onboardingExamButton
+            )}
+            <Button variant="outline-primary" block href="https://support.edx.org/hc/en-us/sections/115004169247-Taking-Timed-and-Proctored-Exams">
+              {intl.formatMessage(messages.proctoringReviewRequirementsButton)}
+            </Button>
+          </div>
+        </section>
+      )}
+    </>
   );
 }
 

@@ -56,7 +56,8 @@ function StartOrResumeCourseCard({ intl }) {
         )}
       />
       {/* Footer is needed for internal vertical spacing to work out. If you can remove, be my guest */}
-      <Card.Footer />
+      {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+      <Card.Footer><></></Card.Footer>
     </Card>
   );
 }
