@@ -39,7 +39,6 @@ describe('Notification Trigger', () => {
   function renderWithProvider(data, onClick = () => {
   }) {
     const { container } = render(
-      // eslint-disable-next-line react/jsx-no-constructed-context-values
       <SidebarContext.Provider value={{ ...mockData, ...data }}>
         <NotificationTrigger onClick={onClick} />
       </SidebarContext.Provider>,

@@ -27,7 +27,6 @@ function useEnrollClickHandler(courseId, orgId, successText) {
       });
       global.location.reload();
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId]);
 
   return { enrollClickHandler, loading };

@@ -7,6 +7,7 @@ module.exports = createConfig('eslint', {
     rules: {
       'import/named': 'off',
       'import/no-extraneous-dependencies': 'off',
+      'react/jsx-no-constructed-context-values': 'off',
     },
   }],
   rules: {

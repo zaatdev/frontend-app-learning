@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/prefer-default-export */
 import React, { useContext, useMemo } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';

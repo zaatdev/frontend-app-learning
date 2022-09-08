@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { camelCaseObject, getConfig } from '@edx/frontend-platform';
@@ -48,6 +49,15 @@ async function calculateVoucherDiscount(voucher, sku, username) {
   const url = `${urlBase}/?code=${voucher}&sku=${sku}&username=${username}`;
   return getAuthenticatedHttpClient().get(url)
     .then(res => camelCaseObject(res));
+}
+
+function CloseText({ intl }) {
+  return (
+    <span>
+      {intl.formatMessage(messages.streakButton)}
+      <span className="sr-only">. {intl.formatMessage(messages.streakButtonSrOnly)}</span>
+    </span>
+  );
 }
 
 function StreakModal({
@@ -107,16 +117,6 @@ function StreakModal({
 
   if (!isStreakCelebrationOpen) {
     return null;
-  }
-
-  // eslint-disable-next-line react/no-unstable-nested-components
-  function CloseText() {
-    return (
-      <span>
-        {intl.formatMessage(messages.streakButton)}
-        <span className="sr-only">. {intl.formatMessage(messages.streakButtonSrOnly)}</span>
-      </span>
-    );
   }
 
   let upgradeUrl;
@@ -232,7 +232,7 @@ function StreakModal({
           </>
         )}
         { !queryingDiscount && !showOffer && (
-          <ModalDialog.CloseButton className="px-5" variant="primary"><CloseText /></ModalDialog.CloseButton>
+          <ModalDialog.CloseButton className="px-5" variant="primary"><CloseText intl={intl} /></ModalDialog.CloseButton>
         )}
       </ModalDialog.Footer>
     </ModalDialog>

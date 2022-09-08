@@ -48,7 +48,6 @@ describe('Discussions Trigger', () => {
 
   function renderWithProvider(testData = {}) {
     const { container } = render(
-      // eslint-disable-next-line react/jsx-no-constructed-context-values
       <SidebarContext.Provider value={{ ...mockData, ...testData }}>
         <DiscussionsSidebar />
       </SidebarContext.Provider>,

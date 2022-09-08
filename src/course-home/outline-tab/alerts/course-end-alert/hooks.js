@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/prefer-default-export */
 import React, { useMemo } from 'react';
 import { useAlert } from '../../../../generic/user-messages';
