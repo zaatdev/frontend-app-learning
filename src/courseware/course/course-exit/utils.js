@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
@@ -67,7 +66,7 @@ function getCourseExitMode(
 }
 
 // Returns null in order to render the default navigation text
-function getCourseExitNavigation(courseId, intl) {
+function GetCourseExitNavigation(courseId, intl) {
   const {
     certificateData,
     hasScheduledContent,
@@ -134,7 +133,7 @@ const logVisit = (org, courseId, administrator, variant) => {
 export {
   COURSE_EXIT_MODES,
   getCourseExitMode,
-  getCourseExitNavigation,
+  GetCourseExitNavigation,
   logClick,
   logVisit,
 };

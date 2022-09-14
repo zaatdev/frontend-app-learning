@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -60,7 +59,7 @@ const externalConfig = {
   ],
 };
 
-const initDatesMMP2P = () => {
+const InitDatesMMP2P = () => {
   location = 'dates';
 
   const defaultState = {
@@ -88,7 +87,7 @@ const initDatesMMP2P = () => {
   };
 };
 
-const initHomeMMP2P = (courseId) => {
+const InitHomeMMP2P = (courseId) => {
   location = 'home';
 
   const defaultState = {
@@ -147,7 +146,7 @@ const initHomeMMP2P = (courseId) => {
   };
 };
 
-const initCoursewareMMP2P = (courseId, sequenceId, unitId) => {
+const InitCoursewareMMP2P = (courseId, sequenceId, unitId) => {
   location = 'course';
 
   const defaultState = {
@@ -267,7 +266,7 @@ export {
   MMP2PFlyoverTriggerMobile,
   MMP2PLockPaywall,
   MMP2PSidecard,
-  initCoursewareMMP2P,
-  initHomeMMP2P,
-  initDatesMMP2P,
+  InitCoursewareMMP2P,
+  InitHomeMMP2P,
+  InitDatesMMP2P,
 };

@@ -5,14 +5,14 @@ import {
   fireEvent, getByRole, initializeTestStore, loadUnit, render, screen, waitFor,
 } from '../../setupTest';
 import { handleNextSectionCelebration } from './celebration';
-import * as celebrationUtils from './celebration/utils';
 import Course from './Course';
 
 jest.mock('@edx/frontend-platform/analytics');
 
-const recordFirstSectionCelebration = jest.fn();
-// eslint-disable-next-line no-import-assign
-celebrationUtils.recordFirstSectionCelebration = recordFirstSectionCelebration;
+jest.mock('./celebration/utils', () => ({
+  ...jest.requireActual('./celebration/utils'),
+  recordFirstSectionCelebration: jest.fn(),
+}));
 
 describe('Course', () => {
   let store;

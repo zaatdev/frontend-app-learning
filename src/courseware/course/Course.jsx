@@ -19,7 +19,7 @@ import { useModel } from '../../generic/model-store';
 import { getSessionStorage, setSessionStorage } from '../../data/sessionStorage';
 
 /** [MM-P2P] Experiment */
-import { initCoursewareMMP2P, MMP2PBlockModal } from '../../experiments/mm-p2p';
+import { InitCoursewareMMP2P, MMP2PBlockModal } from '../../experiments/mm-p2p';
 
 function Course({
   courseId,
@@ -72,7 +72,7 @@ function Course({
   }
 
   /** [MM-P2P] Experiment */
-  const MMP2P = initCoursewareMMP2P(courseId, sequenceId, unitId);
+  const MMP2P = InitCoursewareMMP2P(courseId, sequenceId, unitId);
 
   return (
     <SidebarProvider courseId={courseId} unitId={unitId}>

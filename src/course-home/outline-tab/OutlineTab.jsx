@@ -30,7 +30,7 @@ import ProctoringInfoPanel from './widgets/ProctoringInfoPanel';
 import AccountActivationAlert from '../../alerts/logistration-alert/AccountActivationAlert';
 
 /** [MM-P2P] Experiment */
-import { initHomeMMP2P, MMP2PFlyover } from '../../experiments/mm-p2p';
+import { InitHomeMMP2P, MMP2PFlyover } from '../../experiments/mm-p2p';
 
 function OutlineTab({ intl }) {
   const {
@@ -105,7 +105,7 @@ function OutlineTab({ intl }) {
   };
 
   /** [[MM-P2P] Experiment */
-  const MMP2P = initHomeMMP2P(courseId);
+  const MMP2P = InitHomeMMP2P(courseId);
 
   /** show post enrolment survey to only B2C learners */
   const learnerType = isEnterpriseUser() ? 'enterprise_learner' : 'b2c_learner';

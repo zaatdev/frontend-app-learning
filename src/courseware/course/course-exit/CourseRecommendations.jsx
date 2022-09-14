@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
 import { getConfig } from '@edx/frontend-platform';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
@@ -106,8 +107,8 @@ function CourseCard({
           <Card.ImageCap src={image.src} />
           <Card.Header title={truncate(title, 70, { reserveLastWord: -1 })} subtitle={subtitle} size="sm" />
           {/* Section is needed for internal vertical spacing to work out. If you can remove, be my guest */}
-          <Card.Section />
-          <Card.Footer textElement={intl.formatMessage(messages.recommendationsCourseFooter)} />
+          <Card.Section> <></> </Card.Section>
+          <Card.Footer textElement={intl.formatMessage(messages.recommendationsCourseFooter)}><></></Card.Footer>
         </Card>
       </Hyperlink>
     </div>
@@ -142,6 +143,7 @@ function CourseRecommendations({ intl, variant }) {
 
   useEffect(() => {
     dispatch(fetchCourseRecommendations(courseKey, courseId));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const recommendationsLength = recommendations ? recommendations.length : 0;

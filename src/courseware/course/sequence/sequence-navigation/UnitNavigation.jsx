@@ -8,7 +8,7 @@ import {
 } from '@edx/frontend-platform/i18n';
 import { useSelector } from 'react-redux';
 
-import { getCourseExitNavigation } from '../../course-exit';
+import { GetCourseExitNavigation } from '../../course-exit';
 
 import UnitNavigationEffortEstimate from './UnitNavigationEffortEstimate';
 import { useSequenceNavigationMetadata } from './hooks';
@@ -26,7 +26,7 @@ function UnitNavigation({
   const { courseId } = useSelector(state => state.courseware);
 
   const renderNextButton = () => {
-    const { exitActive, exitText } = getCourseExitNavigation(courseId, intl);
+    const { exitActive, exitText } = GetCourseExitNavigation(courseId, intl);
     const buttonOnClick = isLastUnit ? goToCourseExitPage : onClickNext;
     const buttonText = (isLastUnit && exitText) ? exitText : intl.formatMessage(messages.nextButton);
     const disabled = isLastUnit && !exitActive;

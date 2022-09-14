@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState, useRef, useEffect, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 
 import UserMessagesContext from './UserMessagesContext';
@@ -81,14 +83,13 @@ export default function UserMessagesProvider({ children }) {
     flashMessages.forEach(flashMessage => add(flashMessage));
   }, []);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const value = {
+  const value = useMemo(() => ({
     add,
     addFlash,
     remove,
     clear,
     messages,
-  };
+  }), [messages]);
 
   return (
     <UserMessagesContext.Provider value={value}>

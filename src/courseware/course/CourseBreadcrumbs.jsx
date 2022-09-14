@@ -125,7 +125,7 @@ export default function CourseBreadcrumbs({
       });
     }
     return [chapters, sequentials];
-  }, [courseStatus, sequenceStatus, allSequencesInSections]);
+  }, [courseStatus, sequenceStatus, allSequencesInSections, sequenceId]);
 
   return (
     <nav aria-label="breadcrumb" className="my-4 d-inline-block col-sm-10">
