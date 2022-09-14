@@ -112,6 +112,7 @@ function ProctoringInfoPanel({ intl }) {
       .finally(() => {
         dispatch(fetchProctoringInfoResolved());
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let onboardingExamButton = null;

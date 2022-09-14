@@ -20,6 +20,7 @@ function WeeklyGoalCelebrationModal({
     if (isOpen) {
       recordWeeklyGoalCelebration(org, courseId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   return (

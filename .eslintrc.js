@@ -9,4 +9,8 @@ module.exports = createConfig('eslint', {
       'import/no-extraneous-dependencies': 'off',
     },
   }],
+  rules: {
+    'no-restricted-exports': 'off',
+    'func-names': 'off',
+  },
 });

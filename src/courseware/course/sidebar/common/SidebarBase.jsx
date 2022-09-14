@@ -29,6 +29,7 @@ function SidebarBase({
     if (type === 'learning.events.sidebar.close') {
       toggleSidebar(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sidebarId, toggleSidebar]);
 
   useEventListener('message', receiveMessage);

@@ -19,6 +19,7 @@ function CourseAccessErrorPage({ intl }) {
   const activeEnterpriseAlert = useActiveEnterpriseAlert(courseId);
   useEffect(() => {
     dispatch(fetchDiscussionTab(courseId));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId]);
 
   const {

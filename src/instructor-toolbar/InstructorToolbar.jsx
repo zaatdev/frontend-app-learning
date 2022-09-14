@@ -45,6 +45,7 @@ export default function InstructorToolbar(props) {
   // NOTE: This was originally added because of the CourseExit page redirect. Once that page stops
   //   doing a redirect because a CourseExit experience exists for all learners, this could be removed
   const [didMount, setDidMount] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setDidMount(true);
     // Returning this function here will run setDidMount(false) when this component is unmounted

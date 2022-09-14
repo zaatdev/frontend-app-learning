@@ -121,6 +121,7 @@ function Sequence({
     if (unit) {
       setUnitHasLoaded(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [(unit || {}).id]);
 
   // If sequence might be a unit, we want to keep showing a spinner - the courseware container will redirect us when

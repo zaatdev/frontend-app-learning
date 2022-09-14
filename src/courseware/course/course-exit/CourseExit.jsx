@@ -48,6 +48,7 @@ function CourseExit({ intl }) {
     if (courseGoals && enrollmentMode === 'audit' && !isMasquerading) {
       unsubscribeFromGoalReminders(courseId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let body = null;

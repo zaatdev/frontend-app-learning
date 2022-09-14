@@ -19,6 +19,7 @@ export default function TabContainer(props) {
   useEffect(() => {
     // The courseId from the URL is the course we WANT to load.
     dispatch(fetch(courseIdFromUrl));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseIdFromUrl]);
 
   // The courseId from the store is the course we HAVE loaded.  If the URL changes,

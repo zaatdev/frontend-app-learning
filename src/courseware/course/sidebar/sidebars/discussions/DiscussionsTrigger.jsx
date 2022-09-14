@@ -31,6 +31,7 @@ function DiscussionsTrigger({
     if (baseUrl) {
       dispatch(getCourseDiscussionTopics(courseId));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId, baseUrl]);
   if (!topic.id) {
     return null;

@@ -52,7 +52,7 @@ export default function Tabs({ children, className, ...attrs }) {
       ),
     );
     return wrappedChildren;
-  }, [children, indexOfLastVisibleChild]);
+  }, [children, indexOfLastVisibleChild, invisibleStyle, overflowElementRef]);
 
   return (
     <nav

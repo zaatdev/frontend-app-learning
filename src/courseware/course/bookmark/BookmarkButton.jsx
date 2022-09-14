@@ -36,6 +36,7 @@ export default function BookmarkButton({
     } else {
       dispatch(addBookmark(unitId));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBookmarked, unitId]);
 
   return (

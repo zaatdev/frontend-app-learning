@@ -206,6 +206,7 @@ function CertificateStatus({ intl }) {
       grade_variant: gradeEventName,
       certificate_status_variant: certEventName,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!certCase) {
