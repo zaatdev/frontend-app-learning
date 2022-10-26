@@ -10,11 +10,11 @@ import { useModel } from '../../../generic/model-store';
 import SidebarContext from './SidebarContext';
 import { SIDEBARS } from './sidebars';
 
-export default function SidebarProvider({
+const SidebarProvider = ({
   courseId,
   unitId,
   children,
-}) {
+}) => {
   const { verifiedMode } = useModel('courseHomeMeta', courseId);
   const shouldDisplayFullScreen = useWindowSize().width < breakpoints.large.minWidth;
   const shouldDisplaySidebarOpen = useWindowSize().width > breakpoints.medium.minWidth;
@@ -64,7 +64,7 @@ export default function SidebarProvider({
       {children}
     </SidebarContext.Provider>
   );
-}
+};
 
 SidebarProvider.propTypes = {
   courseId: PropTypes.string.isRequired,
@@ -75,3 +75,5 @@ SidebarProvider.propTypes = {
 SidebarProvider.defaultProps = {
   children: null,
 };
+
+export default SidebarProvider;

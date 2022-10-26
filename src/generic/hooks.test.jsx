@@ -4,10 +4,10 @@ import { useEventListener, useIFrameHeight } from './hooks';
 describe('Hooks', () => {
   test('useEventListener', async () => {
     const handler = jest.fn();
-    function TestComponent() {
+    const TestComponent = () => {
       useEventListener('message', handler);
       return (<div data-testid="testid" />);
-    }
+    };
     render(<TestComponent />);
 
     await screen.findByTestId('testid');
@@ -16,7 +16,7 @@ describe('Hooks', () => {
   });
   test('useIFrameHeight', async () => {
     const onLoaded = jest.fn();
-    function TestComponent() {
+    const TestComponent = () => {
       const [hasLoaded, height] = useIFrameHeight(onLoaded);
       return (
         <div data-testid="testid">
@@ -28,7 +28,7 @@ describe('Hooks', () => {
           </span>
         </div>
       );
-    }
+    };
     render(<TestComponent />);
 
     await screen.findByTestId('testid');

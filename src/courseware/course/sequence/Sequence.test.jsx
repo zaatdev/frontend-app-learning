@@ -382,13 +382,11 @@ describe('Sequence', () => {
     });
   });
 
-  function SidebarWrapper({ contextValue }) {
-    return (
-      <SidebarContext.Provider value={contextValue}>
-        <Sequence {...mockData} />
-      </SidebarContext.Provider>
-    );
-  }
+  const SidebarWrapper = ({ contextValue }) => (
+    <SidebarContext.Provider value={contextValue}>
+      <Sequence {...mockData} />
+    </SidebarContext.Provider>
+  );
 
   SidebarWrapper.propTypes = {
     contextValue: PropTypes.shape({}).isRequired,

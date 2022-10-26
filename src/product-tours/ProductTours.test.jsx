@@ -160,11 +160,10 @@ describe('Course Home Tours', () => {
   });
 });
 
-function MockUnit({ courseId, id }) { // eslint-disable-line react/prop-types
-  return (
-    <div id="courseware-sequenceNavigation" className="fake-unit">Unit Contents {courseId} {id}</div>
-  );
-}
+// eslint-disable-next-line react/prop-types
+const MockUnit = ({ courseId, id }) => (
+  <div id="courseware-sequenceNavigation" className="fake-unit">Unit Contents {courseId} {id}</div>
+);
 
 jest.mock(
   '../courseware/course/sequence/Unit',

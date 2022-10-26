@@ -18,12 +18,12 @@ import {
   fetchTourData,
 } from './data';
 
-function ProductTours({
+const ProductTours = ({
   activeTab,
   courseId,
   isStreakCelebrationOpen,
   org,
-}) {
+}) => {
   const {
     proctoringPanelStatus,
   } = useSelector(state => state.courseHome);
@@ -169,7 +169,7 @@ function ProductTours({
       />
     </>
   );
-}
+};
 
 ProductTours.propTypes = {
   activeTab: PropTypes.string.isRequired,

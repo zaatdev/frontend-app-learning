@@ -7,7 +7,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Sidecard from './Sidecard';
 
-export function FlyoverMobile({ options }) {
+export const FlyoverMobile = ({ options }) => {
   const {
     access: { isAudit },
     flyover: { toggle },
@@ -54,7 +54,7 @@ export function FlyoverMobile({ options }) {
       </div>
     </div>
   );
-}
+};
 FlyoverMobile.propTypes = {
   options: PropTypes.shape({
     access: PropTypes.shape({

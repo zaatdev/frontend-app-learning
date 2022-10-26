@@ -12,9 +12,9 @@ import { useModel, useModels } from '../../generic/model-store';
 import { MMP2PFlyoverTrigger } from '../../experiments/mm-p2p';
 import JumpNavMenuItem from './JumpNavMenuItem';
 
-function CourseBreadcrumb({
+const CourseBreadcrumb = ({
   content, withSeparator, courseId, sequenceId, unitId, isStaff,
-}) {
+}) => {
   const defaultContent = content.filter(destination => destination.default)[0] || { id: courseId, label: '', sequences: [] };
   return (
     <>
@@ -57,7 +57,7 @@ function CourseBreadcrumb({
       </li>
     </>
   );
-}
+};
 CourseBreadcrumb.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
@@ -81,7 +81,7 @@ CourseBreadcrumb.defaultProps = {
   isStaff: null,
 };
 
-export default function CourseBreadcrumbs({
+const CourseBreadcrumbs = ({
   courseId,
   sectionId,
   sequenceId,
@@ -89,7 +89,7 @@ export default function CourseBreadcrumbs({
   isStaff,
   /** [MM-P2P] Experiment */
   mmp2p,
-}) {
+}) => {
   const course = useModel('coursewareMeta', courseId);
   const courseStatus = useSelector(state => state.courseware.courseStatus);
   const sequenceStatus = useSelector(state => state.courseware.sequenceStatus);
@@ -160,7 +160,7 @@ export default function CourseBreadcrumbs({
       </ol>
     </nav>
   );
-}
+};
 
 CourseBreadcrumbs.propTypes = {
   courseId: PropTypes.string.isRequired,
@@ -184,3 +184,5 @@ CourseBreadcrumbs.defaultProps = {
   /** [MM-P2P] Experiment */
   mmp2p: {},
 };
+
+export default CourseBreadcrumbs;

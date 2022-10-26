@@ -9,7 +9,7 @@ import Day from './Day';
 import { daycmp, isLearnerAssignment } from '../utils';
 
 /** [MM-P2P] Experiment (argument) */
-export default function Timeline({ mmp2p }) {
+const Timeline = ({ mmp2p }) => {
   const {
     courseId,
   } = useSelector(state => state.courseHome);
@@ -70,7 +70,7 @@ export default function Timeline({ mmp2p }) {
       ))}
     </ul>
   );
-}
+};
 
 /** [MM-P2P] Experiment */
 Timeline.propTypes = {
@@ -80,3 +80,5 @@ Timeline.propTypes = {
 Timeline.defaultProps = {
   mmp2p: {},
 };
+
+export default Timeline;

@@ -32,7 +32,7 @@ import AccountActivationAlert from '../../alerts/logistration-alert/AccountActiv
 /** [MM-P2P] Experiment */
 import { InitHomeMMP2P, MMP2PFlyover } from '../../experiments/mm-p2p';
 
-function OutlineTab({ intl }) {
+const OutlineTab = ({ intl }) => {
   const {
     courseId,
     proctoringPanelStatus,
@@ -231,7 +231,7 @@ function OutlineTab({ intl }) {
       </div>
     </>
   );
-}
+};
 
 OutlineTab.propTypes = {
   intl: intlShape.isRequired,

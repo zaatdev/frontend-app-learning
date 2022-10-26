@@ -11,7 +11,7 @@ import { sendTrackEvent } from '@edx/frontend-platform/analytics';
  *
  * This might be temporary, based on how much we can fix the sources of these urls-with-spaces.
  */
-function PathFixesProvider({ children }) {
+const PathFixesProvider = ({ children }) => {
   const location = useLocation();
 
   // We only check for spaces. That's not the only kind of character that is escaped in URLs, but it would always be
@@ -33,7 +33,7 @@ function PathFixesProvider({ children }) {
   }
 
   return children; // pass through
-}
+};
 
 PathFixesProvider.propTypes = {
   children: PropTypes.node.isRequired,

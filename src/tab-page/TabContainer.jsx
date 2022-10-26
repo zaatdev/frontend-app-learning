@@ -6,7 +6,7 @@ import { OuterExamTimer } from '@edx/frontend-lib-special-exams';
 
 import TabPage from './TabPage';
 
-export default function TabContainer(props) {
+const TabContainer = (props) => {
   const {
     children,
     fetch,
@@ -40,7 +40,7 @@ export default function TabContainer(props) {
       {children}
     </TabPage>
   );
-}
+};
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
@@ -48,3 +48,5 @@ TabContainer.propTypes = {
   slice: PropTypes.string.isRequired,
   tab: PropTypes.string.isRequired,
 };
+
+export default TabContainer;

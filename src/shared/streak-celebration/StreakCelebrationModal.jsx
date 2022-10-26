@@ -51,19 +51,17 @@ async function calculateVoucherDiscount(voucher, sku, username) {
     .then(res => camelCaseObject(res));
 }
 
-function CloseText({ intl }) {
-  return (
-    <span>
-      {intl.formatMessage(messages.streakButton)}
-      <span className="sr-only">. {intl.formatMessage(messages.streakButtonSrOnly)}</span>
-    </span>
-  );
-}
+const CloseText = ({ intl }) => (
+  <span>
+    {intl.formatMessage(messages.streakButton)}
+    <span className="sr-only">. {intl.formatMessage(messages.streakButtonSrOnly)}</span>
+  </span>
+);
 
-function StreakModal({
+const StreakModal = ({
   courseId, metadataModel, streakLengthToCelebrate, intl, isStreakCelebrationOpen,
   closeStreakCelebration, streakDiscountCouponEnabled, verifiedMode, ...rest
-}) {
+}) => {
   const { org, celebrations, username } = useModel('courseHomeMeta', courseId);
   const factoid = getRandomFactoid(intl, streakLengthToCelebrate);
   // eslint-disable-next-line no-unused-vars
@@ -238,7 +236,7 @@ function StreakModal({
       </ModalDialog.Footer>
     </ModalDialog>
   );
-}
+};
 
 StreakModal.defaultProps = {
   isStreakCelebrationOpen: false,

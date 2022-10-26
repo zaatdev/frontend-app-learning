@@ -9,12 +9,12 @@ import { useModel } from '../../generic/model-store';
 import { isLearnerAssignment } from '../dates-tab/utils';
 import './DateSummary.scss';
 
-export default function DateSummary({
+const DateSummary = ({
   dateBlock,
   userTimezone,
   /** [MM-P2P] Experiment */
   mmp2p,
-}) {
+}) => {
   const {
     courseId,
   } = useSelector(state => state.courseHome);
@@ -96,7 +96,7 @@ export default function DateSummary({
       )}
     </li>
   );
-}
+};
 
 DateSummary.propTypes = {
   dateBlock: PropTypes.shape({
@@ -128,3 +128,5 @@ DateSummary.defaultProps = {
     },
   },
 };
+
+export default DateSummary;

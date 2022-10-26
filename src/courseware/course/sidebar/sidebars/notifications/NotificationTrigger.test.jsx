@@ -37,13 +37,11 @@ describe('Notification Trigger', () => {
     setItemSpy.mockRestore();
   });
 
-  function SidebarWrapper({ contextValue, onClick }) {
-    return (
-      <SidebarContext.Provider value={contextValue}>
-        <NotificationTrigger onClick={onClick} />
-      </SidebarContext.Provider>
-    );
-  }
+  const SidebarWrapper = ({ contextValue, onClick }) => (
+    <SidebarContext.Provider value={contextValue}>
+      <NotificationTrigger onClick={onClick} />
+    </SidebarContext.Provider>
+  );
 
   SidebarWrapper.propTypes = {
     contextValue: PropTypes.shape({}).isRequired,

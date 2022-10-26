@@ -9,7 +9,7 @@ import SidebarBase from '../../common/SidebarBase';
 import SidebarContext from '../../SidebarContext';
 import NotificationTrigger, { ID } from './NotificationTrigger';
 
-function NotificationTray({ intl }) {
+const NotificationTray = ({ intl }) => {
   const {
     courseId,
     onNotificationSeen,
@@ -67,7 +67,7 @@ function NotificationTray({ intl }) {
       </div>
     </SidebarBase>
   );
-}
+};
 
 NotificationTray.propTypes = {
   intl: intlShape.isRequired,

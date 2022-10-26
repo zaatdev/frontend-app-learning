@@ -12,7 +12,7 @@ import { LOADED, LOADING } from '../course-home/data/slice';
 import PageLoading from './PageLoading';
 import messages from '../tab-page/messages';
 
-function CourseAccessErrorPage({ intl }) {
+const CourseAccessErrorPage = ({ intl }) => {
   const { courseId } = useParams();
 
   const dispatch = useDispatch();
@@ -55,7 +55,7 @@ function CourseAccessErrorPage({ intl }) {
       <Footer />
     </>
   );
-}
+};
 
 CourseAccessErrorPage.propTypes = {
   intl: intlShape.isRequired,

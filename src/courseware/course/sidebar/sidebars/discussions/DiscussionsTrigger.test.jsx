@@ -43,13 +43,11 @@ describe('Discussions Trigger', () => {
       .reply(200, buildTopicsFromUnits(state.models.units));
   });
 
-  function SidebarWrapper({ contextValue, onClick }) {
-    return (
-      <SidebarContext.Provider value={contextValue}>
-        <DiscussionsTrigger onClick={onClick} />
-      </SidebarContext.Provider>
-    );
-  }
+  const SidebarWrapper = ({ contextValue, onClick }) => (
+    <SidebarContext.Provider value={contextValue}>
+      <DiscussionsTrigger onClick={onClick} />
+    </SidebarContext.Provider>
+  );
 
   SidebarWrapper.propTypes = {
     contextValue: PropTypes.shape({}).isRequired,

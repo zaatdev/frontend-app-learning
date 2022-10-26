@@ -7,7 +7,7 @@ import { sendTrackingLogEvent } from '@edx/frontend-platform/analytics';
 import messages from '../messages';
 import { useModel } from '../../../generic/model-store';
 
-function StartOrResumeCourseCard({ intl }) {
+const StartOrResumeCourseCard = ({ intl }) => {
   const {
     courseId,
   } = useSelector(state => state.courseHome);
@@ -60,7 +60,7 @@ function StartOrResumeCourseCard({ intl }) {
       <Card.Footer><></></Card.Footer>
     </Card>
   );
-}
+};
 
 StartOrResumeCourseCard.propTypes = {
   intl: intlShape.isRequired,

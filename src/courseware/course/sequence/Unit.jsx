@@ -76,7 +76,7 @@ export function sendUrlHashToFrame(frame) {
   }
 }
 
-function Unit({
+const Unit = ({
   courseId,
   format,
   onLoaded,
@@ -84,7 +84,7 @@ function Unit({
   intl,
   /** [MM-P2P] Experiment */
   mmp2p,
-}) {
+}) => {
   const { authenticatedUser } = useContext(AppContext);
   const view = authenticatedUser ? 'student_view' : 'public_view';
   let iframeUrl = `${getConfig().LMS_BASE_URL}/xblock/${id}?show_title=0&show_bookmark_button=0&recheck_access=1&view=${view}`;
@@ -246,7 +246,7 @@ function Unit({
       )}
     </div>
   );
-}
+};
 
 Unit.propTypes = {
   courseId: PropTypes.string.isRequired,

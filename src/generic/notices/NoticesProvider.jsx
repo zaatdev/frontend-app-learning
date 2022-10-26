@@ -8,7 +8,7 @@ import { getNotices } from './api';
  * course home and onto a full-screen notice page. If the plugin is not
  * installed, or there are no notices, we just passthrough this component.
  */
-function NoticesProvider({ children }) {
+const NoticesProvider = ({ children }) => {
   const [isRedirected, setIsRedirected] = useState();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -27,7 +27,7 @@ function NoticesProvider({ children }) {
       {isRedirected === true ? null : children}
     </div>
   );
-}
+};
 
 NoticesProvider.propTypes = {
   children: PropTypes.node.isRequired,

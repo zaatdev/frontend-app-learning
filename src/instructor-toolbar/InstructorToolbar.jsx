@@ -36,7 +36,7 @@ function getStudioUrl(courseId, unitId) {
   return urlFull;
 }
 
-export default function InstructorToolbar(props) {
+const InstructorToolbar = (props) => {
   // This didMount logic became necessary once we had a page that does a redirect on a quick exit.
   // As a result, it unmounts the InstructorToolbar (which will be remounted by the new component),
   // but the InstructorToolbar's MasqueradeWidget has an outgoing request. Since it is unmounted
@@ -109,7 +109,7 @@ export default function InstructorToolbar(props) {
       />
     </div>
   ));
-}
+};
 
 InstructorToolbar.propTypes = {
   courseId: PropTypes.string,
@@ -122,3 +122,5 @@ InstructorToolbar.defaultProps = {
   unitId: undefined,
   tab: '',
 };
+
+export default InstructorToolbar;
